@@ -13,7 +13,7 @@ Install the library by running
 raco pkg install https://github.com/vdloo/detect-os-release.git
 ```
 
-Or by adding it to the `deps` of your `info.rkt` file before running `raco pkg install:
+Or by adding it to the `deps` of your `info.rkt` file before running `raco pkg update --update-deps`:
 ```
 (define deps '("base"
 	       "https://github.com/vdloo/detect-os-release.git"))
