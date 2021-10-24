@@ -36,7 +36,7 @@ EOF
 
       (test-case
         "Test that detect-os returns correct OS if Debian"
-        (define archlinux-os-release #<<EOF
+        (define debian-os-release #<<EOF
 PRETTY_NAME="Debian GNU/Linux 10 (buster)"
 NAME="Debian GNU/Linux"
 VERSION_ID="10"
@@ -48,7 +48,7 @@ SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
 EOF
 )
-        (define mock-file->string-with (λ (_) archlinux-os-release))
+        (define mock-file->string-with (λ (_) debian-os-release))
 
         (define ret (detect-os #:file->string-with mock-file->string-with))
 
@@ -57,7 +57,7 @@ EOF
 
       (test-case
         "Test that detect-os returns correct OS if Fedora"
-        (define archlinux-os-release #<<EOF
+        (define fedora-os-release #<<EOF
 NAME=Fedora
 VERSION="32 (Workstation Edition)"
 ID=fedora
@@ -79,7 +79,7 @@ VARIANT="Workstation Edition"
 VARIANT_ID=workstation
 EOF
 )
-        (define mock-file->string-with (λ (_) archlinux-os-release))
+        (define mock-file->string-with (λ (_) fedora-os-release))
 
         (define ret (detect-os #:file->string-with mock-file->string-with))
 
